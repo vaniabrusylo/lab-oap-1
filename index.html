@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Менеджер заявок на доступ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Менеджер заявок на доступ до лабораторії</h1>
+        <p>Лабораторна робота №1</p>
+    </header>
+
+    <section>
+        <h2>Створення заявки</h2>
+
+        <form id="requestForm">
+
+            <div class="field">
+                <label for="userName">Ім’я користувача</label>
+                <input type="text" id="userName" placeholder="Введіть ім’я">
+                <small id="userError"></small>
+            </div>
+
+            <div class="field">
+                <label for="date">Дата доступу</label>
+                <input type="datetime-local" id="date">
+                <small id="dateError"></small>
+            </div>
+
+            <div class="field">
+                <label for="accessType">Тип доступу</label>
+                <select id="accessType">
+                    <option value="">Оберіть тип доступу</option>
+                    <option value="Читання">Читання</option>
+                    <option value="Робота">Робота</option>
+                    <option value="Адміністрування">Адміністрування</option>
+                </select>
+                <small id="typeError"></small>
+            </div>
+
+            <div class="field">
+                <label for="comments">Коментар</label>
+                <textarea id="comments" placeholder="Введіть коментар"></textarea>
+                <small id="commentError"></small>
+            </div>
+
+            <div class="buttons">
+                <button type="submit">Зберегти</button>
+                <button type="button" id="clearBtn">Очистити</button>
+            </div>
+
+        </form>
+    </section>
+
+    <section>
+        <div class="top-panel">
+            <h2>Список заявок</h2>
+            <input type="text" id="searchInput" placeholder="Пошук...">
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ім’я користувача</th>
+                    <th>Дата доступу</th>
+                    <th>Тип доступу</th>
+                    <th>Коментар</th>
+                    <th>Статус</th>
+                    <th>Дії</th>
+                </tr>
+            </thead>
+
+            <tbody id="tableBody"></tbody>
+        </table>
+    </section>
+
+</div>
+
+</body>
+</html>
